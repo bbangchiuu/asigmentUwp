@@ -1,0 +1,23 @@
+﻿<Page
+    x:Class="App1.Pages.Naview"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App1.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <NavigationView x:ConnectionId='2' x:Name="NavView"                                                          >
+            <NavigationView.MenuItems>
+                <NavigationViewItem Tag="listsong" Icon="Audio" Content="List Song"/>
+                <NavigationViewItem Tag="upload" Icon="Upload" Content="Up load my song"/>
+            </NavigationView.MenuItems>
+            <ScrollViewer>
+                <Frame x:ConnectionId='3' x:Name="ContentFrame" Padding="12,0,12,24" IsTabStop="True"                                                 />
+            </ScrollViewer>
+        </NavigationView>
+    </Grid>
+</Page>
+
