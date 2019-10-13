@@ -79,8 +79,20 @@
     <AppxPackagedFile Include="E:\Windows_Forms_Programming\songMusic\App1\App1\bin\x86\Debug\Pages\ListSong.xbf">
       <PackagePath>Pages\ListSong.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Windows_Forms_Programming\songMusic\App1\App1\bin\x86\Debug\Pages\Login.xbf">
+      <PackagePath>Pages\Login.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Windows_Forms_Programming\songMusic\App1\App1\bin\x86\Debug\Pages\MyInfo.xbf">
+      <PackagePath>Pages\MyInfo.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Windows_Forms_Programming\songMusic\App1\App1\bin\x86\Debug\Pages\MySong.xbf">
+      <PackagePath>Pages\MySong.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Windows_Forms_Programming\songMusic\App1\App1\bin\x86\Debug\Pages\Naview.xbf">
       <PackagePath>Pages\Naview.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Windows_Forms_Programming\songMusic\App1\App1\bin\x86\Debug\Pages\Register.xbf">
+      <PackagePath>Pages\Register.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Windows_Forms_Programming\songMusic\App1\App1\bin\x86\Debug\Pages\Upload.xbf">
       <PackagePath>Pages\Upload.xbf</PackagePath>

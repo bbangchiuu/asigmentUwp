@@ -30,13 +30,13 @@
     <AppXManifest Include="E:\Windows_Forms_Programming\songMusic\App1\App1\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-10-02T17:45:04.813</Modified>
+      <Modified>2019-10-12T14:55:15.116</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="E:\Windows_Forms_Programming\songMusic\App1\App1\bin\x86\Debug\App1.exe">
       <PackagePath>entrypoint\App1.exe</PackagePath>
-      <Modified>2019-10-02T17:45:03.886</Modified>
+      <Modified>2019-10-12T14:55:14.674</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ASUS\.nuget\packages\newtonsoft.json\12.0.2\lib\netstandard2.0\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -90,27 +90,43 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Windows_Forms_Programming\songMusic\App1\App1\bin\x86\Debug\App1.xr.xml">
       <PackagePath>App1.xr.xml</PackagePath>
-      <Modified>2019-10-02T17:39:47.176</Modified>
+      <Modified>2019-10-12T14:55:11.451</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Windows_Forms_Programming\songMusic\App1\App1\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2019-10-02T17:45:03.690</Modified>
+      <Modified>2019-10-12T14:50:29.234</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Windows_Forms_Programming\songMusic\App1\App1\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2019-10-02T17:45:03.691</Modified>
+      <Modified>2019-10-12T14:50:29.235</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Windows_Forms_Programming\songMusic\App1\App1\bin\x86\Debug\Pages\ListSong.xbf">
       <PackagePath>Pages\ListSong.xbf</PackagePath>
-      <Modified>2019-10-02T17:45:03.691</Modified>
+      <Modified>2019-10-12T14:55:11.457</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Windows_Forms_Programming\songMusic\App1\App1\bin\x86\Debug\Pages\Login.xbf">
+      <PackagePath>Pages\Login.xbf</PackagePath>
+      <Modified>2019-10-12T14:50:29.235</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Windows_Forms_Programming\songMusic\App1\App1\bin\x86\Debug\Pages\MyInfo.xbf">
+      <PackagePath>Pages\MyInfo.xbf</PackagePath>
+      <Modified>2019-10-12T14:50:29.236</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Windows_Forms_Programming\songMusic\App1\App1\bin\x86\Debug\Pages\MySong.xbf">
+      <PackagePath>Pages\MySong.xbf</PackagePath>
+      <Modified>2019-10-12T14:50:29.236</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Windows_Forms_Programming\songMusic\App1\App1\bin\x86\Debug\Pages\Naview.xbf">
       <PackagePath>Pages\Naview.xbf</PackagePath>
-      <Modified>2019-10-02T17:45:03.692</Modified>
+      <Modified>2019-10-12T14:50:29.237</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Windows_Forms_Programming\songMusic\App1\App1\bin\x86\Debug\Pages\Register.xbf">
+      <PackagePath>Pages\Register.xbf</PackagePath>
+      <Modified>2019-10-12T14:50:29.237</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Windows_Forms_Programming\songMusic\App1\App1\bin\x86\Debug\Pages\Upload.xbf">
       <PackagePath>Pages\Upload.xbf</PackagePath>
-      <Modified>2019-10-02T17:45:03.692</Modified>
+      <Modified>2019-10-12T14:50:29.237</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.18362.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -118,11 +134,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Windows_Forms_Programming\songMusic\App1\App1\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2019-10-02T17:20:29.689</Modified>
+      <Modified>2019-10-12T14:47:44.571</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Windows_Forms_Programming\songMusic\App1\App1\bin\x86\Debug\Core\App1.exe">
       <PackagePath>App1.exe</PackagePath>
-      <Modified>2019-10-02T17:45:04.795</Modified>
+      <Modified>2019-10-12T14:55:15.108</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

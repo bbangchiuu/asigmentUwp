@@ -12,10 +12,14 @@
         <NavigationView x:ConnectionId='2' x:Name="NavView"                                                          >
             <NavigationView.MenuItems>
                 <NavigationViewItem Tag="listsong" Icon="Audio" Content="List Song"/>
-                <NavigationViewItem Tag="upload" Icon="Upload" Content="Up load my song"/>
+                <NavigationViewItem x:ConnectionId='3' Tag="login" Icon="OtherUser" x:Name="Login" Content="Login"/>
+                <NavigationViewItem x:ConnectionId='4' Tag="register" Icon="OtherUser" x:Name="Regsiter" Content="Register"/>
+                <NavigationViewItem x:ConnectionId='5' Tag="myinfo" Icon="ContactInfo" Content="My info" Visibility="Collapsed" x:Name="MyInfor"/>
+                <NavigationViewItem x:ConnectionId='6' Tag="upload" Icon="Upload" Content="Up load my song" Visibility="Collapsed" x:Name="UploadSong"/>
+                <NavigationViewItem x:ConnectionId='7' Tag="logout" Icon="OtherUser" Content="Logout" Visibility="Collapsed" x:Name="LogoutUser"/>
             </NavigationView.MenuItems>
             <ScrollViewer>
-                <Frame x:ConnectionId='3' x:Name="ContentFrame" Padding="12,0,12,24" IsTabStop="True"                                                 />
+                <Frame x:ConnectionId='8' x:Name="ContentFrame" Padding="12,0,12,24" IsTabStop="True"                                                 />
             </ScrollViewer>
         </NavigationView>
     </Grid>

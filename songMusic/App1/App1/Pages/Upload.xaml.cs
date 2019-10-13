@@ -1,4 +1,6 @@
-﻿using App1.Entity;
+﻿using App1.Constant;
+using App1.Entity;
+using App1.Service;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -11,6 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -28,10 +31,11 @@ namespace App1.Pages
     /// </summary>
     public sealed partial class Upload : Page
     {
-        private string ApiUrl = "https://2-dot-backup-server-003.appspot.com/_api/v2/songs/post-free";
+        MemberServiceImp memberService;
         public Upload()
         {
             this.InitializeComponent();
+            memberService = new MemberServiceImp();
         }
         private void Submit_OnClick(object sender, RoutedEventArgs e)
         {
@@ -64,10 +68,6 @@ namespace App1.Pages
             {
                 this.erroLink.Text = "Link is requaired!";
                 subLink = false;
-            }else if (!this.Link.Text.EndsWith(".mp3"))
-            {
-                this.erroLink.Text = "Link must be mp3";
-                subLink = false;
             }
             else
             {
@@ -86,15 +86,29 @@ namespace App1.Pages
                     thumbnail = this.Thumbnail.Text,
                     link = this.Link.Text
                 };
-                var httpClient = new HttpClient();
-                //httpClient.DefaultRequestHeaders.Add("Authorization", "Basic " + token);
-                HttpContent content = new StringContent(JsonConvert.SerializeObject(newSong), Encoding.UTF8, "application/json");
 
-                //Task<HttpResponseMessage> httpRequestMessage = httpClient.PostAsync(ApiUrl, content);
-                String responseContent = httpClient.PostAsync(ApiUrl, content).Result.Content.ReadAsStringAsync().Result;
+                string token = memberService.ReadTokenFromLocalStorage();
+
+                var httpClient = new HttpClient();               
+                httpClient.DefaultRequestHeaders.Add("Authorization", "Basic " + token);
+                HttpContent content = new StringContent(JsonConvert.SerializeObject(newSong), Encoding.UTF8, "application/json");
+                String responseContent = httpClient.PostAsync(ApiUrl.SONG_URL, content).Result.Content.ReadAsStringAsync().Result;
                 Debug.WriteLine("Response: " + responseContent);
+
+                messageSuccess();
             }
 
+        }
+
+        private async void messageSuccess()
+        {
+            MessageDialog messageDialog = new MessageDialog("up load thanh cong", "Tile");
+            await messageDialog.ShowAsync();
+            this.Name.Text = "";
+            this.Thumbnail.Text = "";
+            this.Singer.Text = "";
+            this.Link.Text = "";
+            this.Author.Text = "";
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using App1.Entity;
+using App1.Service;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -25,9 +27,32 @@ namespace App1.Pages
     /// </summary>
     public sealed partial class Naview : Page
     {
+        public static Boolean isUser = false;
+        public static Frame MainFrame;
+        public static NavigationViewItem loginNaviewItem;
+        public static NavigationViewItem registerNaviewItem;
+
+        public static NavigationViewItem uploadNaviewItem;
+        public static NavigationViewItem myinfoNaviewItem;
+        public static NavigationViewItem logoutNaviewItem;
+        public static NavigationViewItem mysongNaviewItem;
+
+        private MemberServiceImp memberService;
         public Naview()
         {
             this.InitializeComponent();
+            MainFrame = this.ContentFrame;
+
+            loginNaviewItem = this.Login;
+            registerNaviewItem = this.Regsiter;
+
+            uploadNaviewItem = this.UploadSong;
+            myinfoNaviewItem = this.MyInfor;
+            logoutNaviewItem = this.LogoutUser;
+            mysongNaviewItem = this.MySong;
+
+            memberService = new MemberServiceImp();
+          
         }
         private void ContentFrame_NavigationFailed(object sender, NavigationFailedEventArgs e)
         {
@@ -38,8 +63,12 @@ namespace App1.Pages
         private readonly List<(string Tag, Type Page)> _pages = new List<(string Tag, Type Page)>
         {
             ("listsong", typeof(Pages.ListSong)),
+            ("login", typeof(Pages.Login)),
+            ("register", typeof(Pages.Register)),
             ("upload", typeof(Pages.Upload)),
-       
+            ("myinfo", typeof(Pages.MyInfo)),
+            ("mysong", typeof(Pages.MySong)),
+
         };
 
         private void NavView_Loaded(object sender, RoutedEventArgs e)
@@ -53,7 +82,20 @@ namespace App1.Pages
             // If navigation occurs on SelectionChanged, this isn't needed.
             // Because we use ItemInvoked to navigate, we need to call Navigate
             // here to load the home page.
-            NavView_Navigate("listsong", new EntranceNavigationTransitionInfo());
+            Member member = memberService.GetInformation();
+            if (member != null)
+            {
+                Debug.WriteLine("login sucsses");
+                isUser = true;               
+
+                MainFrame.Navigate(typeof(Pages.MyInfo));
+
+                MemberServiceImp.isUSer();
+            }
+            else
+            {
+                NavView_Navigate("listsong", new EntranceNavigationTransitionInfo());
+            }          
         }
 
         private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
@@ -80,6 +122,16 @@ namespace App1.Pages
             {
                 var item = _pages.FirstOrDefault(p => p.Tag.Equals(navItemTag));
                 _page = item.Page;
+            }
+
+            if(navItemTag == "logout")
+            {
+                Debug.WriteLine("log out");
+                memberService.logout();
+                isUser = false;
+
+                MemberServiceImp.isUSer();
+                
             }
 
             // Get the page type before navigation so you can prevent duplicate

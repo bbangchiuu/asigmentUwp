@@ -10,23 +10,36 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <ListView ItemsSource="{x:Bind listMusic}">
-            <ListView.ItemTemplate>
-                <DataTemplate x:DataType="entity:Music">
-                    <StackPanel Margin="0,10,0,10" Orientation="Horizontal">
-                        <Rectangle Width="77" Height="77">
-                            <Rectangle.Fill>
-                                <ImageBrush ImageSource="{x:Bind thumbnail}"/>
-                            </Rectangle.Fill>
-                        </Rectangle>
-                        <StackPanel Margin="10,10,0,0">
-                            <TextBlock Text="{x:Bind name}"/>
-                            <TextBlock Text="{x:Bind singer}"/>
+        <StackPanel>
+            <ListView x:Name="ListViewSong" ItemsSource="{x:Bind listMusic}">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="entity:Music">
+                        <StackPanel Margin="0,10,0,10" Orientation="Horizontal" Tapped="SelectSong" Tag="{Binding}" >
+                            <Rectangle Width="77" Height="77">
+                                <Rectangle.Fill>
+                                    <ImageBrush ImageSource="{x:Bind thumbnail}"/>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <StackPanel Margin="10,10,0,0">
+                                <TextBlock Text="{x:Bind name}"/>
+                                <TextBlock Text="{x:Bind singer}"/>
+                            </StackPanel>
                         </StackPanel>
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-
-        </ListView>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Bottom">
+            <MediaElement x:Name="MyMediaPlayer"/>
+            <CommandBar>
+                <AppBarSeparator/>
+                <AppBarButton x:Name="PreviousButton" Icon="Previous" Label="Previous" Click="PreviousButton_OnClick"/>
+                <AppBarButton x:Name="StatusButton" Icon="Play" Label="Play" Click="StatusButton_OnClick"/>
+                <AppBarButton x:Name="NextButton" Icon="Next" Label="Next" Click="NextButton_OnClick"/>
+                <CommandBar.Content>
+                    <TextBlock x:Name="ControlLabel" Text="Please choose a song." Margin="12,14"/>
+                </CommandBar.Content>
+            </CommandBar>
+        </StackPanel>
     </Grid>
 </Page>
